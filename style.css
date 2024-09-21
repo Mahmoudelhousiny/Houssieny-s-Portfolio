@@ -160,10 +160,17 @@ section.main .container .welcome-paragraph span {
 }
 section.main .container .welcome-paragraph p {
   font-size: 14px;
+    line-height: 1.5;
+}
+
+section.main .container .welcome-paragraph p i {
+  font-size: 30px;
+  margin: 10px 15px 0;
+  color: #747474;
 }
 
 section.main .container .welcome-paragraph .pages {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 15px;
