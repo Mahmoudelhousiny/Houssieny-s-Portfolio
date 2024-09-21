@@ -1,0 +1,663 @@
+/* Global Values */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-color: #111;
+  --fill-color: #eea302;
+  --hover-color: #926402;
+  --secondary-fill: #ff3b25;
+  --tertiary-fill: #80d8da;
+  --fourth-fill: #3f51b5;
+}
+
+body {
+  font-family: "Work Sans", system-ui;
+  background-color: #f3f3f3;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+textarea {
+  resize: none;
+}
+
+.container {
+  padding-top: 20px;
+  width: calc(100% - 160px);
+  margin: 0 auto;
+}
+
+/* start index.html */
+
+/* start header */
+
+header .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .container .name-job {
+  position: relative;
+}
+
+header .container .name-job a h2 {
+  font-size: 18px;
+}
+
+header .container .name-job a h2,
+header .container .name-job:hover p {
+  transition: 0.3s ease;
+}
+
+header .container .name-job:hover h2,
+header .container .name-job:hover p {
+  color: var(--hover-color);
+}
+
+header .container .name-job::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50px, -50%);
+  background-color: var(--fill-color);
+}
+
+header .container .my-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .container .my-nav a {
+  font-size: 14px;
+  padding: 5px 20px;
+  transition: 0.3s ease;
+}
+
+header .container .my-nav a:hover,
+footer .container > :nth-child(3) a i:hover,
+footer .container > :nth-child(2) a:hover {
+  color: var(--hover-color);
+}
+
+header .container .my-nav a.border {
+  border-left: 1px solid var(--main-color);
+}
+
+/* end header */
+
+/* start main section */
+
+section.main {
+  height: 90vh;
+  position: relative;
+}
+
+section.main .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100%;
+}
+
+section.main .container .my-img,
+section.main .container img {
+  width: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+section.main .container .welcome-paragraph {
+  width: 400px;
+}
+
+section.main .container .welcome-paragraph h1 {
+  font-size: 75px;
+}
+section.main .container .welcome-paragraph span {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0 15px;
+}
+section.main .container .welcome-paragraph p {
+  font-size: 14px;
+}
+
+section.main .container .welcome-paragraph .pages {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+section.main .container .welcome-paragraph .pages a {
+  color: var(--main-color);
+  font-weight: 600;
+  padding: 40px 20px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+  transition: 0.3s ease;
+}
+
+section.main .container .welcome-paragraph .pages > :nth-child(1) {
+  background-color: var(--fill-color);
+}
+section.main .container .welcome-paragraph .pages > :nth-child(2) {
+  background-color: var(--secondary-fill);
+}
+section.main .container .welcome-paragraph .pages > :nth-child(3) {
+  background-color: var(--tertiary-fill);
+}
+
+section.main .container .welcome-paragraph .pages a:hover {
+  background-color: #fff;
+}
+/* end main section */
+/* start footer */
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  border-top: 1px solid #a7a7a773;
+}
+
+footer .container > :nth-child(1) h4,
+footer .container > :nth-child(2) h4,
+footer .container > :nth-child(3) h4 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+footer .container .author span {
+  color: var(--fill-color);
+  font-weight: 800;
+}
+
+footer .container > :nth-child(3) .links {
+  display: flex;
+  align-items: center;
+}
+
+footer .container > :nth-child(3) .links a i {
+  font-size: 25px;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  footer .container {
+    width: calc(100% - 19px);
+  }
+}
+/* end footer */
+/* start media query */
+
+@media all and (max-width: 767px) {
+  header .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  section.main {
+    height: auto;
+    margin: 40px 0;
+  }
+  section.main .container {
+    flex-direction: column-reverse;
+  }
+
+  section.main .container .welcome-paragraph {
+    text-align: center;
+  }
+  section.main .container .my-img,
+  section.main .container .welcome-paragraph {
+    width: 300px;
+  }
+  section.main .container .welcome-paragraph .pages {
+    gap: 3px;
+    justify-content: center;
+  }
+  footer .container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+/* end media query */
+
+/* end index.html */
+
+/* start scroll button */
+
+div.scroll {
+  position: relative;
+}
+
+div.scroll i {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  font-size: 25px;
+  color: #fff;
+  background-color: var(--fill-color);
+  border-radius: 5px;
+  z-index: 50;
+  transition: 0.3s ease;
+}
+
+div.scroll i:hover,
+section.projects .container .the-project .project-details button:hover {
+  background-color: transparent;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+/* end scroll button */
+
+/* start resume.html */
+
+section.resume,
+section.projects,
+section.contact {
+  margin-top: 100px;
+}
+
+section.resume .title h2,
+section.projects .title h2,
+section.contact .title h2 {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto 50px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  border-bottom: 1px solid #a7a7a773;
+}
+
+section.resume .container,
+section.education .container,
+section.skills .container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #a7a7a773;
+}
+
+section.resume .container .col-1,
+section.education .container .col-1,
+section.skills .container .col-1 {
+  width: calc(100% / 2);
+  flex: 1 1;
+}
+
+section.resume .container .col-1 h3,
+section.education .container .col-1 h3,
+section.skills .container .col-1 h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+section.resume .container .col-2,
+section.education .container .col-2,
+section.skills .container .col-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  width: calc(100% / 3);
+  gap: 50px;
+}
+
+section.resume .container .col-2 .work-name .date,
+section.education .container .col-2 .work-name .date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+section.resume .container .col-2 .work-name .date h3,
+section.education .container .col-2 .work-name .date h3 {
+  color: var(--hover-color);
+}
+
+section.resume .container .col-2 .work-name p,
+section.education .container .col-2 .work-name p,
+section.skills .container .col-2 ul li {
+  line-height: 2;
+}
+
+/* end resume.html */
+
+/* start education section */
+
+section.education .container,
+section.skills .container {
+  padding: 50px 0;
+}
+/* end education section */
+
+/* start skills ex */
+
+section.skills .container {
+  border-bottom: none;
+}
+
+/* end skills ex */
+
+/* Start Resume Media Query */
+
+@media all and (max-width: 991px) {
+  section.resume .container .col-1,
+  section.education .container .col-1,
+  section.skills .container .col-1 {
+    width: calc(100% / 3);
+    flex: 0 0;
+    margin-right: 40px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  section.resume .container,
+  section.education .container,
+  section.skills .container,
+  footer .container {
+    flex-direction: column;
+    width: calc(100% - 50px);
+  }
+
+  section.resume .container .col-1,
+  section.education .container .col-1,
+  section.skills .container .col-1,
+  section.resume .container .col-2,
+  section.education .container .col-2,
+  section.skills .container .col-2 {
+    width: 100%;
+  }
+
+  section.resume .container .col-1 h3,
+  section.education .container .col-1 h3,
+  section.skills .container .col-1 h3 {
+    margin-bottom: 40px;
+  }
+
+  section.resume .container .col-2 .work-name .date,
+  section.education .container .col-2 .work-name .date {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  section.resume .container .col-2 .work-name .date p,
+  section.education .container .col-2 .work-name .date p {
+    line-height: 1.5;
+  }
+}
+
+/* End Resume Media Query */
+
+/* start projects section */
+
+section.projects {
+  padding-bottom: 50px;
+}
+
+section.projects .container {
+  max-width: 1100px;
+}
+
+section.projects .container .the-project {
+  display: flex;
+  margin-bottom: 150px;
+}
+
+section.projects .container .the-project .project-details {
+  margin-right: 30px;
+}
+
+section.projects .container .the-project .project-details h2 {
+  color: var(--hover-color);
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+section.projects .container .the-project .project-details p {
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+section.projects .container .the-project .project-details button {
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+section.projects .container .the-project .project-details .first-btn {
+  background-color: var(--fill-color);
+}
+section.projects .container .the-project .project-details .second-btn {
+  background-color: var(--secondary-fill);
+}
+section.projects .container .the-project .project-details .third-btn {
+  background-color: var(--tertiary-fill);
+}
+section.projects .container .the-project .project-details .fourth-btn {
+  background-color: var(--fourth-fill);
+}
+
+section.projects .container .the-project .project-details,
+section.projects .container .the-project .project-image {
+  width: calc(100% / 2);
+  flex: 1 1;
+}
+
+section.projects .container .the-project .project-image {
+  position: relative;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 5px 5px 21px 0px #a7a7a7;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+section.projects .container .the-project .project-image::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #9264021f;
+  z-index: 5;
+  opacity: 0;
+}
+
+section.projects .container .the-project .project-image:hover::before {
+  animation: fill 0.7s;
+}
+
+section.projects .container .the-project .project-image:hover img {
+  transform: scale(1.025);
+}
+
+section.projects .container .the-project .project-image img {
+  border-radius: 20px;
+  width: fit-content;
+  transition: 0.3s ease;
+  height: 100%;
+  object-fit: cover;
+}
+/* end projects section */
+
+/* start projects media query */
+@media (min-width: 767px) and (max-width: 991px) {
+  section.projects .container .the-project {
+    align-items: center;
+  }
+}
+
+@media all and (max-width: 767px) {
+  section.projects .container {
+    width: calc(100% - 50px);
+  }
+
+  section.projects .container .the-project {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  section.projects .container .the-project .project-details {
+    margin-bottom: 50px;
+  }
+
+  section.projects .container .the-project .project-details,
+  section.projects .container .the-project .project-image {
+    width: 100%;
+    flex: 0 0;
+  }
+}
+/* end projects media query */
+/* start contact section */
+
+section.contact {
+  margin-bottom: 200px;
+}
+
+section.contact .title h2 {
+  margin: 0 auto 20px;
+}
+
+section.contact .container {
+  display: flex;
+  justify-content: center;
+  max-width: 1100px;
+}
+
+section.contact .title p {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+section.contact .container form input,
+section.contact .container form textarea {
+  border: 1px solid var(--main-color);
+  padding: 15px;
+  caret-color: var(--fill-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+section.contact .container form textarea {
+  width: 100%;
+  height: 125px;
+}
+
+section.contact .container form input:focus,
+section.contact .container form textarea:focus {
+  outline: none;
+}
+
+section.contact .title p {
+  margin-bottom: 30px;
+}
+
+section.contact .container form > div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+section.contact .container form button {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid var(--fill-color);
+  border-radius: 25px;
+  background-color: var(--fill-color);
+  transition: 0.3s ease;
+}
+
+section.contact .container form button:hover {
+  background-color: transparent;
+  border-color: var(--main-color);
+}
+
+/* end contact section */
+/* start contact query */
+@media all and (max-width: 600px) {
+  section.contact .container {
+    width: calc(100% - 50px);
+  }
+  section.contact .container form {
+    width: 100%;
+  }
+  section.contact .container form > div {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+/* end contact query */
+/* start animation */
+
+@keyframes fill {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    z-index: 0;
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+/* end animation */
